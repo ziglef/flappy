@@ -41,6 +41,8 @@ public class PlayState extends State {
         }
 
         scoreFnt = new BitmapFont();
+        scoreFnt.setUseIntegerPositions(false);
+        scoreFnt.setColor(Color.BLACK);
         score = 0;
         score_hack = false;
 
@@ -71,7 +73,7 @@ public class PlayState extends State {
             }
 
             if(tube.collides(bird.getBounds())) {
-                gsm.set(new PlayState(gsm));
+                gsm.set(new EndState(gsm, score));
                 break;
             }
         }
@@ -100,8 +102,6 @@ public class PlayState extends State {
         sb.draw(ground, groundPos1.x, groundPos1.y);
         sb.draw(ground, groundPos2.x, groundPos2.y);
 
-        scoreFnt.setUseIntegerPositions(false);
-        scoreFnt.setColor(Color.BLACK);
         scoreFnt.draw(sb, String.valueOf(score), cam.position.x + cam.viewportWidth / 2 - 25, cam.position.y + cam.viewportHeight / 2 - 25);
 
         sb.end();
