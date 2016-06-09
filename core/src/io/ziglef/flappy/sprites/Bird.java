@@ -24,7 +24,7 @@ public class Bird {
         velocity = new Vector3(0, 0, 0);
         animationTexture = new Texture("birdanimation.png");
         birdAnimation = new Animation(animationTexture, 3, 0.5f);
-        bounds = new Rectangle(x, y, animationTexture.getWidth() / 3, animationTexture.getHeight() / 3);
+        bounds = new Rectangle(x, y, animationTexture.getWidth() / 3, animationTexture.getHeight());
         flapSound = Gdx.audio.newSound(Gdx.files.internal("sfx_wing.ogg"));
     }
 

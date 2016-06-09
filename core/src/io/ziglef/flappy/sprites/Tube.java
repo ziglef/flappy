@@ -65,4 +65,12 @@ public class Tube {
         topTube.dispose();
         bottomTube.dispose();
     }
+
+    public Rectangle getBoundsTop() {
+        return boundsTop;
+    }
+
+    public Rectangle getBoundsBot() {
+        return boundsBot;
+    }
 }

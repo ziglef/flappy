@@ -3,6 +3,7 @@ package io.ziglef.flappy.states;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
 
@@ -86,6 +87,22 @@ public class PlayState extends State {
         sb.draw(ground, groundPos2.x, groundPos2.y);
 
         sb.end();
+
+        /* DEBUG
+        ShapeRenderer sr = new ShapeRenderer();
+        sr.setProjectionMatrix(cam.combined);
+        sr.setAutoShapeType(true);
+        sr.begin();
+
+        for(Tube tube : tubes) {
+            sr.rect(tube.getBoundsBot().x, tube.getBoundsBot().y, tube.getBoundsBot().width, tube.getBoundsBot().height);
+            sr.rect(tube.getBoundsTop().x, tube.getBoundsTop().y, tube.getBoundsTop().width, tube.getBoundsTop().height);
+        }
+
+        sr.rect(bird.getBounds().x, bird.getBounds().y, bird.getBounds().width, bird.getBounds().height);
+
+        sr.end();
+        */
 
     }
 
