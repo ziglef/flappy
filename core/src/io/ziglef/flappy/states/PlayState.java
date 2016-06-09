@@ -79,7 +79,7 @@ public class PlayState extends State {
         }
 
         if(bird.getPosition().y <= ground.getHeight() + GROUND_Y_OFFSET)
-            gsm.set(new PlayState(gsm));
+            gsm.set(new EndState(gsm, score));
 
         cam.position.x = bird.getPosition().x + 80;
         cam.update();
